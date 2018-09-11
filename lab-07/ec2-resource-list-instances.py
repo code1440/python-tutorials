@@ -9,8 +9,9 @@ for instance in instances:
     print(instance.state)
     for item in instance.volumes.all():
         print item.id
-   
 
+list_volume()        
+   
 # Mac installation tip: 
 # sudo pip install --ignore-installed six boto3
 # Assignment : Create 3 instances in ec2 using ansible playbooked from last week.
