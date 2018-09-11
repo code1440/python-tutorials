@@ -3,9 +3,9 @@ import boto3
 
 def create_instance():
     ec2_resource = boto3.resource('ec2')
-    instances = ec2_resource.create_instances(ImageId='ami-49f0762d',
+    instances = ec2_resource.create_instances(ImageId='ami-6871a115',
                 MinCount=1, MaxCount=3,InstanceType='t2.micro',
-                SecurityGroupIds=['ansible-node'],KeyName='ansible')
+                SecurityGroupIds=['sep06'],KeyName='fullstack')
     instance_ids = []
     for instance in instances:
         instance_ids.append(instance.id)
@@ -16,9 +16,3 @@ def create_instance():
 
 create_instance()
 
-
-def delete_instance():
-    ec2_client = boto3.client('ec2') 
-    tinstances = ec2_client.terminate_instances(InstanceIds=i ,DryRun=False)
-
-    
