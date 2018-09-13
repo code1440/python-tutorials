@@ -17,7 +17,7 @@ def create_instance():
     waiter.wait(InstanceIds=instance_ids)
     print ("Instance is Running now!")
 
-# create_instance()
+create_instance()
 
 def prepare_volume_list():
     mylist = []
